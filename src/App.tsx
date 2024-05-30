@@ -5,30 +5,17 @@ import "./App.css";
 
 function App() {
   const [like, setLike] = useState(false);
-  const [dislike, setDislike] = useState(false);
+  const like_reverse = () => setLike(!like);
+  let likeButton = <button onClick={like_reverse}>좋아요</button>
+  if(like === true) {
+    likeButton = <button onClick={like_reverse}>좋아요 취소</button>
+  }
 
   return (
     <>
       <h1>버튼 만들기👍👎</h1>
       {/* 좋아요 버튼 */}
-      {like === false ? (
-        <button onClick={() => setLike(true)}>좋아요</button>
-      ) : (
-        <button style={{ color: "red" }} onClick={() => setLike(false)}>
-          좋아요 취소
-        </button>
-      )}
-
-      <span> </span>
-
-      {/* 실어요 버튼 */}
-      {dislike === false ? (
-        <button onClick={() => setDislike(true)}>싫어요</button>
-      ) : (
-        <button style={{ color: "red" }} onClick={() => setDislike(false)}>
-          싫어요 취소
-        </button>
-      )}
+      {likeButton}
     </>
   );
 }
