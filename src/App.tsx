@@ -1,16 +1,24 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  // 좋아요
   const [like, setLike] = useState(false);
-  const onClick = () => setLike((prev) => !prev);
-
-  // 싫어요
   const [dislike, setDislike] = useState(false);
-  const onClickDis = () => setDislike((prev) => !prev);
+
+  const onClick = () => {
+    console.log("좋아요 누를건데, 싫어요 눌러져 있나? => dislike: " + dislike);
+    if (dislike) {
+      setDislike(false);
+    }
+    setLike((prev) => !prev); // 실무 표현
+  };
+  const onClickDis = () => {
+    console.log("싫어요 누를건데, 좋아요 눌러져 있나? => like: " + like);
+    if (like) {
+      setLike(false);
+    }
+    setDislike((prev) => !prev);
+  };
 
   return (
     <>
