@@ -25,7 +25,7 @@ function App() {
       <h1>버튼 만들기👍👎</h1>
       {/* 좋아요 버튼 */}
       {like ? (
-        <button onClick={onClick}>좋아요 취소</button>
+        <button style={{color: "red"}} onClick={onClick}>좋아요 취소</button>
       ) : (
         <button onClick={onClick}>좋아요</button>
       )}
@@ -34,7 +34,7 @@ function App() {
 
       {/* 싫어요 버튼 */}
       {dislike ? (
-        <button onClick={onClickDis}>싫어요 취소</button>
+        <button style={{color: "red"}} onClick={onClickDis}>싫어요 취소</button>
       ) : (
         <button onClick={onClickDis}>싫어요</button>
       )}
