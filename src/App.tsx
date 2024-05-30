@@ -5,17 +5,17 @@ import "./App.css";
 
 function App() {
   const [like, setLike] = useState(false);
-  const like_reverse = () => setLike(!like);
-  let likeButton = <button onClick={like_reverse}>좋아요</button>
-  if(like === true) {
-    likeButton = <button onClick={like_reverse}>좋아요 취소</button>
-  }
+  const onClick = () => setLike((prev) => !prev);
 
   return (
     <>
       <h1>버튼 만들기👍👎</h1>
       {/* 좋아요 버튼 */}
-      {likeButton}
+      {like ? (
+        <button onClick={onClick}>좋아요 취소</button>
+      ) : (
+        <button onClick={onClick}>좋아요</button>
+      )}
     </>
   );
 }
